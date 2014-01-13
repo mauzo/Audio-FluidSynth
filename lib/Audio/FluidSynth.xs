@@ -114,11 +114,69 @@ DESTROY (syn)
     CODE:
         delete_fluid_synth(syn);
 
+int
+fluid_synth_sfload (synth, filename, reset)
+        Audio_FluidSynth    synth;
+        const char          *filename;
+        bool                reset;
+    POSTCALL:
+        if (RETVAL == FLUID_FAILED)
+            Perl_croak(aTHX_ "Failed to load SoundFont '%s'", filename);
+
+NO_OUTPUT int 
+fluid_synth_noteon (synth, chan, key, vel)
+        Audio_FluidSynth    synth;
+        int                 chan;
+        int                 key;
+        int                 vel;
+    POSTCALL:
+        if (RETVAL != FLUID_OK)
+            Perl_croak(aTHX_ "noteon failed");
+
+NO_OUTPUT int
+fluid_synth_noteoff (synth, chan, key)
+        Audio_FluidSynth    synth;
+        int                 chan;
+        int                 key;
+    POSTCALL:
+        if (RETVAL != FLUID_OK)
+            Perl_croak(aTHX_ "noteoff failed");
+
+NO_OUTPUT int
+fluid_synth_program_change (synth, chan, prognum)
+        Audio_FluidSynth    synth;
+        int                 chan;
+        int                 prognum;
+    POSTCALL:
+        if (RETVAL != FLUID_OK)
+            Perl_croak(aTHX_ "program_change failed");
+
+NO_OUTPUT int
+fluid_synth_bank_select (synth, chan, bank)
+        Audio_FluidSynth    synth;
+        int                 chan;
+        unsigned int        bank;
+    POSTCALL:
+        if (RETVAL != FLUID_OK)
+            Perl_croak(aTHX_ "bank_select failed");
+
+NO_OUTPUT int
+fluid_synth_program_select (synth, chan, sfont, bank, preset)
+        Audio_FluidSynth    synth;
+        int                 chan;
+        unsigned int        sfont;
+        unsigned int        bank;
+        unsigned int        preset;
+    POSTCALL:
+        if (RETVAL != FLUID_OK)
+            Perl_croak(aTHX_ "program_select failed");
+
 
 MODULE = Audio::FluidSynth  PACKAGE = Audio::FluidSynth::Driver
 
 Audio_FluidSynth_Driver
-new (set, syn)
+new (class, set, syn)
+        const char                  *class;
         Audio_FluidSynth_Settings   set;
         Audio_FluidSynth            syn;
     CODE:
