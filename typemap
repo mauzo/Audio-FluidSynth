@@ -1,4 +1,6 @@
 Audio_FluidSynth_Settings       T_PTROBJ_SPECIAL
+Audio_FluidSynth                T_PTROBJ_SPECIAL
+Audio_FluidSynth_Driver         T_PTROBJ_SPECIAL
 
 # Grr. Put this in the default typemap already!
 
