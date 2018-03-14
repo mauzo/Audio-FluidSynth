@@ -1,0 +1,26 @@
+---
+abstract: 'Bind the fluidsynth MIDI library'
+author:
+  - 'Ben Morrow <ben@morrow.me.uk>'
+build_requires:
+  ExtUtils::CBuilder: '0'
+  Test::More: '0.96'
+configure_requires:
+  ExtUtils::PkgConfig: '0'
+  Module::Build: '0.38'
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4224, CPAN::Meta::Converter version 2.150001'
+license: bsd
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Audio-FluidSynth
+provides:
+  Audio::FluidSynth:
+    file: lib/Audio/FluidSynth.pm
+    version: '1'
+resources:
+  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Audio-FluidSynth
+  license: http://opensource.org/licenses/bsd-license.php
+  repository: http://github.com/mauzo/Audio-FluidSynth
+version: '1'

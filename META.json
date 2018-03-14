@@ -1,0 +1,49 @@
+{
+   "abstract" : "Bind the fluidsynth MIDI library",
+   "author" : [
+      "Ben Morrow <ben@morrow.me.uk>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4224",
+   "license" : [
+      "bsd"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Audio-FluidSynth",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::CBuilder" : "0",
+            "Test::More" : "0.96"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::PkgConfig" : "0",
+            "Module::Build" : "0.38"
+         }
+      }
+   },
+   "provides" : {
+      "Audio::FluidSynth" : {
+         "file" : "lib/Audio/FluidSynth.pm",
+         "version" : "1"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://rt.cpan.org/Public/Dist/Display.html?Name=Audio-FluidSynth"
+      },
+      "license" : [
+         "http://opensource.org/licenses/bsd-license.php"
+      ],
+      "repository" : {
+         "url" : "http://github.com/mauzo/Audio-FluidSynth"
+      }
+   },
+   "version" : "1"
+}

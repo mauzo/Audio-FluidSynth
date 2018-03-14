@@ -1,0 +1,8 @@
+Build.PL
+Changes
+META.json
+META.yml
+lib/Audio/FluidSynth.pm
+lib/Audio/FluidSynth.xs
+t/00use.t
+typemap
