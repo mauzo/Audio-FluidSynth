@@ -255,6 +255,16 @@ fluid_synth_program_select (synth, chan, sfont, bank, preset)
         if (RETVAL != FLUID_OK)
             Perl_croak(aTHX_ "program_select failed");
 
+NO_OUTPUT int
+fluid_synth_cc (synth, chan, num, val)
+        Synth   synth;
+        int     chan;
+        int     num;
+        int     val;
+    POSTCALL:
+        if (RETVAL != FLUID_OK)
+            Perl_croak(aTHX_ "cc failed");
+
 
 MODULE = Audio::FluidSynth  PACKAGE = Audio::FluidSynth::Driver
 
